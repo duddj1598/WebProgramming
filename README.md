@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <body>
-    <h1>Web Programing</h1>
+    <h1>Web Programming</h1>
     <hr>
     <ol>
         <li><b>Week 1</b></li>
