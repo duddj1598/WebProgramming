@@ -1,4 +1,4 @@
-# WebProgramming
+# Web Programming
 
 1. Week1
    - 1주차 연습
