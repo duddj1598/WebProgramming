@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>객체 생성</title>
+    </head>
+    <script>
+        var className1 = new Object();
+        className1.name = "웹프로그래밍";
+        className1.students = 0;
+        className1.register = function(){
+            className1.students++;
+        }
+        className1.unregister = function(){
+            className1.students--;
+        }
+        className1.getStudentsCount = function(){
+            return className1.students;
+        }
+        var className2 = {
+            name : '클라우드컴퓨팅',
+            students : 0,
+            register: function(){
+                this.students++;
+            },
+            unregister: function(){
+                this.students--;
+            },
+            getStudentsCount: function(){
+                return this.students;
+            }
+        }    
+        function ClassName(name, students){
+            this.name = name;
+            this.students = students;
+            this.register = function(){
+                this.students++;
+            }
+            this.unregister = function(){
+                this.students--;
+            }
+            this.getStudentsCount = function(){
+                return this.students;
+            }
+        }
+        var className3 = new ClassName('프로그래밍언어론', 0);
+    </script>
+    <body>
+        <script>
+            document.write("<h1>1. 직접 객체 만들기</h1>\n<p>교과목 이름 = " + className1.name + "</p>\n<p>등록 학생 수 = " + className1.students + "</p>\n");
+            className1.register();
+            document.write("<p>after register, 등록 학생 수 = "+ className1.getStudentsCount() + "</p><hr>");
+            document.write("<h1>2. 리터럴 표기법</h1>\n<p>교과목 이름 = " + className2.name + "</p>\n<p>등록 학생 수 = " + className2.students + "</p>\n");
+            className2.register();
+            document.write("<p>after register, 등록 학생 수 = "+ className2.getStudentsCount() + "</p><hr>");
+            document.write("<h1>3. Prototype</h1>\n<p>교과목 이름 = " + className3.name + "</p>\n<p>등록 학생 수 = " + className3.students + "</p>\n");
+            className3.register();
+            document.write("<p>after register, 등록 학생 수 = "+ className3.getStudentsCount() + "</p>");
+        </script>
+    </body>
+</html>
