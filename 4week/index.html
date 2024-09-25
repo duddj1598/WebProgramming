@@ -5,9 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>객체 생성</title>
     </head>
+    <style>
+        p{
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+    </style>
     <script>
         var className1 = new Object();
         className1.name = "웹프로그래밍";
+        className1.engName = "Web Programming";
         className1.students = 0;
         className1.register = function(){
             className1.students++;
@@ -20,6 +27,7 @@
         }
         var className2 = {
             name : '클라우드컴퓨팅',
+            engName : 'Cloud Computing',
             students : 0,
             register: function(){
                 this.students++;
@@ -31,8 +39,9 @@
                 return this.students;
             }
         }    
-        function ClassName(name, students){
+        function ClassName(name,engName, students){
             this.name = name;
+            this.engName = engName;
             this.students = students;
             this.register = function(){
                 this.students++;
@@ -44,17 +53,17 @@
                 return this.students;
             }
         }
-        var className3 = new ClassName('프로그래밍언어론', 0);
+        var className3 = new ClassName('프로그래밍언어론','Programming Languages', 0);
     </script>
     <body>
         <script>
-            document.write("<h1>1. 직접 객체 만들기</h1>\n<p>교과목 이름 = " + className1.name + "</p>\n<p>등록 학생 수 = " + className1.students + "</p>\n");
+            document.write("<h1>1. 직접 객체 만들기</h1>\n<p>교과목 이름 = " + className1.name + "</p><p>교과목 영문 이름 = "+className1.engName+"</p><p>등록 학생 수 = " + className1.students + "</p>");
             className1.register();
             document.write("<p>after register, 등록 학생 수 = "+ className1.getStudentsCount() + "</p><hr>");
-            document.write("<h1>2. 리터럴 표기법</h1>\n<p>교과목 이름 = " + className2.name + "</p>\n<p>등록 학생 수 = " + className2.students + "</p>\n");
+            document.write("<h1>2. 리터럴 표기법</h1>\n<p>교과목 이름 = " + className2.name + "</p><p>교과목 영문 이름 = "+className2.engName+ "</p><p>등록 학생 수 = " + className2.students + "</p>");
             className2.register();
             document.write("<p>after register, 등록 학생 수 = "+ className2.getStudentsCount() + "</p><hr>");
-            document.write("<h1>3. Prototype</h1>\n<p>교과목 이름 = " + className3.name + "</p>\n<p>등록 학생 수 = " + className3.students + "</p>\n");
+            document.write("<h1>3. Prototype</h1>\n<p>교과목 이름 = " + className3.name + "</p><p>교과목 영문 이름 = "+className3.engName+ "</p><p>등록 학생 수 = " + className3.students + "</p>");
             className3.register();
             document.write("<p>after register, 등록 학생 수 = "+ className3.getStudentsCount() + "</p>");
         </script>
