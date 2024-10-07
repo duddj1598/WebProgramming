@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오 버튼과 이미지 출력</title>
+</head>
+<body>
+    <h2>라디오 버튼을 클릭하면 이미지를 출력합니다.</h2>
+    <hr>
+    <form>
+        <input type="radio" name="fruit" onclick="document.getElementById('img').src='https://cdn.sisajournal.com/news/photo/202105/216731_124666_4150.jpg'">바나나
+        <input type="radio" name="fruit" onclick="document.getElementById('img').src='https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9980A0335A22D4680B'">망고
+        <input type="radio" name="fruit" onclick="document.getElementById('img').src='https://img.hankyung.com/photo/202403/AA.36104679.1.jpg'">사과
+    </form>
+    <img src="" id="img" height="200">
+</body>
+</html>

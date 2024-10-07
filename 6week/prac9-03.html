@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeydown</title>
+</head>
+<body>
+    <h2>계산기 만들기</h2>
+    <hr>
+    <p>수식을 입력하고 &lt;Enter&gt;를 입력하세요.</p>
+    식 <input type="text" id="input" onkeydown="if(event.keyCode==13) document.getElementById('result').value=eval(document.getElementById('input').value)"><br>
+    값 <input type="text" id="result" readonly>
+</body>
+</html>
