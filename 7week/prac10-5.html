@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            clock = document.getElementById("clock");
+            showTime();
+        };
+        function showTime(){
+            let time = new Date();
+            clock.innerHTML = time.toLocaleTimeString(); 
+            setTimeout(showTime, 1000);
+        }
+    </script>
+</head>
+<body>
+    <h2>div 태그에 시계 만들기</h2><hr>
+    <div id="clock" style="border: 1px solid black; width: 130px;"></div>
+</body>
+
+</html>
