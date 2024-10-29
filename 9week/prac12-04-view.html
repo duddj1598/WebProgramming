@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 보기</title>
+</head>
+<script>
+    window.onload = function() {
+        var diary = document.getElementById("diary");
+        for(var i=0; i<localStorage.length; i++){
+            var day = localStorage.key(i);
+            var value = localStorage.getItem(day);
+            diary.innerHTML += "<table><tr><td><span style='border: 1px solid black; padding: 40%;'>"+(i+1)+"</span></td><td>"+"<b style='margin-left: 10%;'>"+day+"</b></td><td><p style='margin-left:3%;margin-top: 0px;margin-bottom: 0px;'>"+value+"</p></td></tr><table><hr style='margin-top: 0px;margin-bottom: 0px;'>"
+        }
+    }
+</script>
+<body>
+    <h2>일기 보기</h2><hr>
+    <div id="diary">
+    </div>
+</body>
+</html>

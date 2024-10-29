@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기쓰기</title>
+</head>
+<script>
+    window.onload = function() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        document.getElementById("today").innerHTML = "오늘 "+year + "." + month + "." + day+"<br>";
+    }
+    function store(){
+        var date = new Date();
+        var today = date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate();
+        var content = document.getElementById("content").value;
+        localStorage.setItem(today, content);
+        document.getElementById("content").value = "";
+    }
+</script>
+<body>
+    <h2>일기쓰기</h2><hr>
+    <a id="today"></a>
+    <textarea id="content" cols="50" rows="10"></textarea><br>
+    <button id="store" onclick="store()">저장</button> <button onclick="window.open('./prac12-04-view.html','window_name','width=600,height=300,location=no,status=no,scrollbars=yes');">보기</button>
+</body>
+</html>
