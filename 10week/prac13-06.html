@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워커 테스크 만들기</title>
+</head>
+<body>
+    <h2>곱셈하기</h2><hr>
+    <input type="text" id="num1">
+    <a>X</a>
+    <input type="text" id="num2">
+    <button id="multiply">곱하기</button>
+    <input type="text" id="result" readonly>
+    <script>  
+        let addWorker = new Worker('prac13-06.js');
+        document.getElementById('multiply').onclick = function() {
+            let parameters = {
+                num1 : document.getElementById('num1').value,
+                num2 : document.getElementById('num2').value
+            }
+            addWorker.postMessage(parameters);
+        }
+        addWorker.onmessage = function(e) {
+            document.getElementById('result').value = e.data;
+        }
+    </script>
+</body>
+</html>
