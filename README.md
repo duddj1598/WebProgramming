@@ -53,3 +53,4 @@
     - Scope, Closure
     - JS function
     - functional programming
+    - (실습) javascript 고급 구문 및 함수형 프로그래밍 연습
